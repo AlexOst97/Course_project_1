@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "course-project-1"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+requests = "^2.32.3"
+python-dotenv = "^1.0.1"
+pandas = "^2.2.3"
+openpyxl = "^3.1.5"
+
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.1.1"
+mypy = "^1.14.0"
+black = "^24.10.0"
+isort = "^5.13.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
