@@ -8,12 +8,12 @@ import logging
 from src.decorators import decorator_spending_by_category
 from src.views import reading_excel_file
 
-
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(filename)s - %(levelname)s - %(message)s",
-    filename="../logs/reports.log",
+    filename="..\\data\\reports.log",
     filemode="w",
+    encoding="utf-8",
 )
 
 spending_by_category_logger = logging.getLogger()
@@ -50,6 +50,3 @@ def spending_by_category(transactions: pd.DataFrame,
                 continue
 
     return json.dumps(final_list, indent=4, ensure_ascii=False)
-
-read_excel = reading_excel_file("..\\data\\operations.xlsx")
-# print(spending_by_category(read_excel, 'Супермаркеты', '01.10.2021'))

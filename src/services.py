@@ -1,19 +1,20 @@
 from datetime import datetime
 import json
 import logging
-from src.views import reading_excel_file
+from src.utils import reading_excel_file
 
 
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(filename)s - %(levelname)s - %(message)s",
-    filename="../logs/services.log",
+    filename="..\\data\\services.log",
     filemode="w",
+    encoding="utf-8",
 )
 
 cashback_categories_logger = logging.getLogger()
 
-data = reading_excel_file("../data/operations.xlsx")
+data = reading_excel_file("..\\data\\operations.xlsx")
 
 
 def cashback_categories(data, year, month) -> str:
